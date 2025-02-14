@@ -20,7 +20,7 @@ const App = () => {
   }, [user, authenticated, ready, login, currentUser, navigate]);
 
   return (
-    <div className="sm:-8 relative flex min-h-screen flex-row bg-[#13131a] p-4">
+    <div className="sm:-8 relative flex min-h-screen flex-row bg-[#86A788] p-4">
       <div className="relative mr-10 hidden sm:flex">
         <Sidebar />
       </div>

@@ -38,7 +38,7 @@ function TaskCard({ task, deleteTask, updateTask }) {
       <div
         ref={setNodeRef}
         style={style}
-        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl border-2 border-green-500 bg-mainBackgroundColor p-3 text-left opacity-30"
+        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl border-2 border-blue-500 bg-white p-3 text-left opacity-30"
       />
     );
   }
@@ -50,10 +50,10 @@ function TaskCard({ task, deleteTask, updateTask }) {
         style={style}
         {...attributes}
         {...listeners}
-        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl bg-mainBackgroundColor p-2.5 text-left hover:ring-2 hover:ring-inset hover:ring-green-500"
+        className="relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl bg-white p-2.5 text-left hover:ring-2 hover:ring-inset hover:ring-blue-500"
       >
         <textarea
-          className="h-[90%] w-full resize-none rounded border-none bg-transparent text-white focus:outline-none"
+          className="h-[90%] w-full resize-none rounded border border-gray-300 bg-transparent text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={task.content}
           autoFocus
           placeholder="Task content here"
@@ -76,7 +76,7 @@ function TaskCard({ task, deleteTask, updateTask }) {
       {...attributes}
       {...listeners}
       onClick={toggleEditMode}
-      className="task relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl bg-[#13131a] p-2.5 text-left hover:ring-2 hover:ring-inset hover:ring-green-500"
+      className="task relative flex h-[100px] min-h-[100px] cursor-grab items-center rounded-xl bg-white p-2.5 text-left hover:ring-2 hover:ring-inset hover:ring-blue-500"
       onMouseEnter={() => {
         setMouseIsOver(true);
       }}
@@ -84,7 +84,7 @@ function TaskCard({ task, deleteTask, updateTask }) {
         setMouseIsOver(false);
       }}
     >
-      <p className="my-auto h-[90%] w-full overflow-y-auto overflow-x-hidden whitespace-pre-wrap">
+      <p className="my-auto h-[90%] w-full overflow-y-auto overflow-x-hidden whitespace-pre-wrap text-blue-900">
         {task.content}
       </p>
 
@@ -93,7 +93,7 @@ function TaskCard({ task, deleteTask, updateTask }) {
           onClick={() => {
             deleteTask(task.id);
           }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 rounded bg-columnBackgroundColor stroke-white p-2 opacity-60 hover:opacity-100"
+          className="absolute right-4 top-1/2 -translate-y-1/2 rounded bg-blue-200 stroke-blue-900 p-2 opacity-60 hover:opacity-100"
         >
           <IconTrash />
         </button>

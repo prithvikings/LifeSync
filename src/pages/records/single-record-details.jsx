@@ -111,9 +111,9 @@ function SingleRecordDetails() {
                 - Todo: Tasks that need to be started
                 - Doing: Tasks that are in progress
                 - Done: Tasks that are completed
-          
+
                 Each task should include a brief description. The tasks should be categorized appropriately based on the stage of the treatment process.
-          
+
                 Please provide the results in the following  format for easy front-end display no quotating or what so ever just pure the structure below:
 
                 {
@@ -130,7 +130,7 @@ function SingleRecordDetails() {
                     { "id": "5", "columnId": "done", "content": "Example task 5" }
                   ]
                 }
-                            
+
                 `;
 
     const result = await model.generateContent(prompt);
@@ -154,7 +154,7 @@ function SingleRecordDetails() {
       <button
         type="button"
         onClick={handleOpenModal}
-        className="mt-6 inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-[#13131a] dark:text-white dark:hover:bg-neutral-800"
+        className="mt-6 inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
       >
         <IconFileUpload />
         Upload Reports
@@ -173,18 +173,18 @@ function SingleRecordDetails() {
         <div className="flex flex-col">
           <div className="-m-1.5 overflow-x-auto">
             <div className="inline-block min-w-full p-1.5 align-middle">
-              <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-[#13131a]">
-                <div className="border-b border-gray-200 px-6 py-4 dark:border-neutral-700">
-                  <h2 className="text-xl font-semibold text-gray-800 dark:text-neutral-200">
+              <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                <div className="border-b border-gray-200 px-6 py-4">
+                  <h2 className="text-xl font-semibold text-blue-900">
                     Personalized AI-Driven Treatment Plan
                   </h2>
-                  <p className="text-sm text-gray-600 dark:text-neutral-400">
+                  <p className="text-sm text-gray-600">
                     A tailored medical strategy leveraging advanced AI insights.
                   </p>
                 </div>
-                <div className="flex w-full flex-col px-6 py-4 text-white">
+                <div className="flex w-full flex-col px-6 py-4 text-blue-900">
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-800 dark:text-white">
+                    <h2 className="text-lg font-semibold text-blue-900">
                       Analysis Result
                     </h2>
                     <div className="space-y-2">
@@ -195,9 +195,9 @@ function SingleRecordDetails() {
                     <button
                       type="button"
                       onClick={processTreatmentPlan}
-                      className="inline-flex items-center gap-x-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+                      className="inline-flex items-center gap-x-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50"
                     >
-                      View Treatment plan
+                      View Treatment Plan
                       <IconChevronRight size={20} />
                       {processing && (
                         <IconProgress
@@ -208,10 +208,10 @@ function SingleRecordDetails() {
                     </button>
                   </div>
                 </div>
-                <div className="grid gap-3 border-t border-gray-200 px-6 py-4 md:flex md:items-center md:justify-between dark:border-neutral-700">
+                <div className="grid gap-3 border-t border-gray-200 px-6 py-4 md:flex md:items-center md:justify-between">
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-neutral-400">
-                      <span className="font-semibold text-gray-800 dark:text-neutral-200"></span>{" "}
+                    <p className="text-sm text-gray-600">
+                      <span className="font-semibold text-blue-900"></span>{" "}
                     </p>
                   </div>
                   <div>

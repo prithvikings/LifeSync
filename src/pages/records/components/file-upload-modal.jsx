@@ -19,13 +19,13 @@ const FileUploadModal = ({
       onAction={onFileUpload}
       actionLabel="Upload and Analyze"
     >
-      <div className="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 p-8 text-slate-700 dark:border-slate-700 dark:text-slate-300">
+      <div className="flex w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-gray-400 p-8 text-gray-700 bg-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           aria-hidden="true"
           fill="currentColor"
-          className="h-12 w-12 opacity-75"
+          className="h-12 w-12 opacity-75 text-gray-600"
         >
           <path
             fillRule="evenodd"
@@ -36,7 +36,7 @@ const FileUploadModal = ({
         <div className="group">
           <label
             htmlFor="fileInputDragDrop"
-            className="cursor-pointer font-medium text-blue-700 group-focus-within:underline dark:text-blue-600"
+            className="cursor-pointer font-medium text-blue-600 group-focus-within:underline"
           >
             <input
               id="fileInputDragDrop"
@@ -45,23 +45,23 @@ const FileUploadModal = ({
               aria-describedby="validFileFormats"
               onChange={onFileChange}
             />
-            Browse{" "}
+            Browse
           </label>
           or drag and drop here
         </div>
-        <small id="validFileFormats">PNG, PDF, JPEG - Max 5MB</small>
+        <small id="validFileFormats" className="text-gray-500">PNG, PDF, JPEG - Max 5MB</small>
       </div>
       {uploading && (
         <IconProgress
           size={15}
-          className="mr-3 mt-3 h-7 w-5 animate-spin text-white"
+          className="mr-3 mt-3 h-7 w-5 animate-spin text-blue-600"
         />
       )}
 
       {uploadSuccess && (
         <p className="mt-2 text-green-600">Upload successful!</p>
       )}
-      <span className="text-md text-left text-white">{filename}</span>
+      <span className="text-md text-left text-gray-700">{filename}</span>
     </Modal>
   );
 };

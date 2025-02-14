@@ -3,8 +3,8 @@ import { IconCirclePlus } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import { usePrivy } from "@privy-io/react-auth";
 import { useStateContext } from "../../context/index";
-import CreateRecordModal from "./components/create-record-modal"; // Adjust the import path
-import RecordCard from "./components/record-card"; // Adjust the import path
+import CreateRecordModal from "./components/create-record-modal";
+import RecordCard from "./components/record-card";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const Index = () => {
     fetchUserByEmail,
     currentUser,
   } = useStateContext();
+
   const [userRecords, setUserRecords] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -31,13 +32,8 @@ const Index = () => {
     localStorage.setItem("userRecords", JSON.stringify(records));
   }, [records]);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const createFolder = async (foldername) => {
     try {
@@ -56,28 +52,26 @@ const Index = () => {
         }
       }
     } catch (e) {
-      console.log(e);
+      console.error(e);
       handleCloseModal();
     }
   };
 
   const handleNavigate = (name) => {
-    const filteredRecords = userRecords.filter(
-      (record) => record.recordName === name,
+    const filteredRecords = userRecords.find(
+      (record) => record.recordName === name
     );
-    navigate(`/medical-records/${name}`, {
-      state: filteredRecords[0],
-    });
+    navigate(`/medical-records/${name}`, { state: filteredRecords });
   };
 
   return (
-    <div className="flex flex-wrap gap-[26px]">
+    <div className="flex flex-col gap-6 p-6">
       <button
         type="button"
-        className="mt-6 inline-flex items-center gap-x-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-[#13131a] dark:text-white dark:hover:bg-neutral-800"
+        className="self-start flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2 text-white shadow-md transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
         onClick={handleOpenModal}
       >
-        <IconCirclePlus />
+        <IconCirclePlus size={20} />
         Create Record
       </button>
 
@@ -87,14 +81,20 @@ const Index = () => {
         onCreate={createFolder}
       />
 
-      <div className="grid w-full gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-        {userRecords?.map((record) => (
-          <RecordCard
-            key={record.recordName}
-            record={record}
-            onNavigate={handleNavigate}
-          />
-        ))}
+      <div className="grid w-full gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {userRecords.length > 0 ? (
+          userRecords.map((record) => (
+            <RecordCard
+              key={record.recordName}
+              record={record}
+              onNavigate={handleNavigate}
+            />
+          ))
+        ) : (
+          <p className="text-gray-600 text-center col-span-full">
+            No records found. Click "Create Record" to add one.
+          </p>
+        )}
       </div>
     </div>
   );

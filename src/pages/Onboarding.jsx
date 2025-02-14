@@ -32,17 +32,17 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#13131a]">
-      <div className="w-full max-w-md rounded-xl bg-[#1c1c24] p-8 shadow-lg">
-        <h2 className="mb-2 text-center text-5xl font-bold text-white">👋 </h2>
-        <h2 className="mb-6 text-center text-2xl font-bold text-white">
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg">
+        <h2 className="mb-2 text-center text-5xl font-bold text-gray-800">👋 </h2>
+        <h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
           Welcome! Let's get started
         </h2>
         <form onSubmit={handleOnboarding}>
           <div className="mb-4">
             <label
               htmlFor="username"
-              className="mb-2 block text-sm text-gray-300"
+              className="mb-2 block text-sm text-gray-600"
             >
               Username
             </label>
@@ -52,11 +52,11 @@ const Onboarding = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
-              className="w-full rounded-lg bg-neutral-900 px-4 py-3 text-neutral-400 focus:border-blue-600 focus:outline-none"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="age" className="mb-2 block text-sm text-gray-300">
+            <label htmlFor="age" className="mb-2 block text-sm text-gray-600">
               Age
             </label>
             <input
@@ -65,13 +65,13 @@ const Onboarding = () => {
               value={age}
               onChange={(e) => setAge(e.target.value)}
               required
-              className="w-full rounded-lg bg-neutral-900 px-4 py-3 text-neutral-400 focus:border-blue-600 focus:outline-none"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="location"
-              className="mb-2 block text-sm text-gray-300"
+              className="mb-2 block text-sm text-gray-600"
             >
               Location
             </label>
@@ -81,12 +81,12 @@ const Onboarding = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               required
-              className="w-full rounded-lg bg-neutral-900 px-4 py-3 text-neutral-400 focus:border-blue-600 focus:outline-none"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
             />
           </div>
           <button
             type="submit"
-            className="mt-4 w-full rounded-lg bg-green-600 py-3 font-semibold text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mt-4 w-full rounded-lg bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Get Started
           </button>

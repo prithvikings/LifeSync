@@ -15,6 +15,7 @@ root.render(
     config={{
       appearance: {
         theme: "dark",
+        logo: "https://cdn.privy.io/sdk/logo.svg",
       },
       embeddedWallets: {
         createOnLogin: "users-without-wallets",
