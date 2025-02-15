@@ -12,6 +12,9 @@ Our platform aims to revolutionize healthcare by enhancing patient care, streaml
 ![Screenshot 2025-02-15 214713](https://github.com/user-attachments/assets/b591c320-e40c-4e65-a305-934664b809c9)
 ![Screenshot 2025-02-15 214833](https://github.com/user-attachments/assets/7f8aac49-0aee-4a8f-a199-e7d248d699ed)
 
+## Architecture diagram
+![Screenshot 2025-02-15 114314](https://github.com/user-attachments/assets/f705f714-b68e-4228-a131-55982a7608e8)
+
 
 
 ## 🌟 Features
